@@ -1,3 +1,4 @@
+# app/models/prefecture.rb
 class Prefecture < ActiveHash::Base
   self.data = [
     { id: 1, name: '---' },
