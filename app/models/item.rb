@@ -1,3 +1,4 @@
+# app/models/item.rb
 class Item < ApplicationRecord
   belongs_to :user
   has_one_attached :image
@@ -8,6 +9,11 @@ class Item < ApplicationRecord
   belongs_to :shipping_charge
   belongs_to :prefecture
   belongs_to :days_to_ship
+
+  # ===========================
+  # アソシエーション設定
+  # ===========================
+  has_one :order
 
   # ===========================
   # バリデーション設定
