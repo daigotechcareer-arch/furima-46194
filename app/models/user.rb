@@ -38,4 +38,10 @@ class User < ApplicationRecord
               }
     validates :birth_date
   end
+
+  # ===========================
+  # アソシエーション設定
+  # ===========================
+  has_many :items
+  has_many :orders
 end
