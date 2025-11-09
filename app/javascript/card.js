@@ -5,7 +5,8 @@ const pay = () => {
   if (!form) return;
 
   // 公開鍵をセット
-  const payjp = Payjp(PAYJP_PUBLIC_KEY);
+  const publicKey = document.querySelector('meta[name="payjp-public-key"]').content;
+  const payjp = Payjp(publicKey);
   const elements = payjp.elements();
 
   // 各入力フィールドを作成してHTMLの該当箇所にマウント
