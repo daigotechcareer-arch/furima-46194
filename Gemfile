@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "3.2.0"
+ruby "3.2.9"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.0"
@@ -79,3 +79,7 @@ gem 'devise'
 gem 'active_hash'
 
 gem "payjp"
+
+group :production do
+  gem 'unicorn', '6.1.0'
+end
