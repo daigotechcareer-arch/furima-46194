@@ -1,28 +1,20 @@
 default: &default
-  encoding: utf8
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: furima_admin
+  password: Furima_Aws2025!
+  host: furima-db-tokyo.c98qg02cqw00.ap-northeast-1.rds.amazonaws.com
+  port: 5432
 
 development:
   <<: *default
-  adapter: mysql2
-  username: root
-  password:
-  host: 127.0.0.1
-  port: 3306
-  database: furima_46194_development
+  database: furima-db-tokyo
 
 test:
   <<: *default
-  adapter: mysql2
-  username: root
-  password:
-  host: 127.0.0.1
-  port: 3306
-  database: furima_46194_test
+  database: furima-db-tokyo_test
 
 production:
   <<: *default
-  adapter: postgresql
-  encoding: unicode
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  url: <%= ENV['DATABASE_URL'] %>
+  database: furima-db-tokyo_production
